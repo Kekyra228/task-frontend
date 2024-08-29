@@ -2,18 +2,18 @@
   <div class="container">
     <div class="top">
       <div class="top-left">
-        <SelectedItems :item="selectedItems" />
+        <SelectedItems :userItems="selectedUserItems" />
       </div>
       <div class="top-right">
-      <SelectedItem :item="selectedItem" />
+        <SelectedItem :item="selectedItem" />
       </div>
     </div>
    <div class="bottom">
       <div class="sidebar-left">
-        <UserItems :items="userItems" @select="selectUserItem" /> 
+        <UserItems :items="userItems" @selectItems="selectUserItems" /> 
       </div>
       <div class="sidebar-right">
-        <ChooseItem :items="availableItems" @select="chooseItem" />
+        <ChooseItem :itemsChoose="chooseItem" @selectItem="selectChooseItem" />
       </div>
    </div>
   </div>
@@ -33,7 +33,7 @@ export default {
   },
   data() {
     return {
-      SelectedItems: [], // лево, выбранные вещи из вещей пользователя снизу слева(отображение сверху слева)
+      selectedUserItems: [], // лево, выбранные вещи из вещей пользователя снизу слева(отображение сверху слева)
       SelectedItem: null, //одна выбранная вещь из правого нижнего блока
         userItems: [ 
       {
@@ -69,7 +69,7 @@ export default {
         "name": "T-shirt 4"
     }
       ], // лево, данные о вещах пользователя снизу слева 
-      ChooseItem: [
+      chooseItem: [
          {
         "id": 11,
         "name": "Jacket 1"
@@ -107,7 +107,10 @@ export default {
   },
   methods: {
     selectUserItems(item) {
-      this.selectedItems.push(item); // левая часть, добавляем в массив несколько элементов пользователя 
+    if (!this.selectedUserItems.find(i => i.id === item.id)) {
+        console.log(this.selectedUserItems)
+       this.selectedUserItems.push(item); // левая часть, добавляем в массив несколько элементов пользователя 
+      }
     },
     selectChooseItem(item) {
       this.selectedItem = item; // право, выбираем одну вещь из нижнего правого блока

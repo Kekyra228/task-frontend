@@ -1,11 +1,22 @@
 <template>
-  <div>
-    <h1>тут выбранные вещи юзера</h1>
+  <div class="selected-items">
+    <div 
+      v-for="item in userItems" 
+      :key="item.id" 
+      class="selected-item"
+    >
+      {{ item.name }}
+    </div>
   </div>
 </template>
 
-<script>
 
+<script>
+export default {
+  props: {
+    userItems: Array
+  }
+}
 </script>
 
 <style scoped>
