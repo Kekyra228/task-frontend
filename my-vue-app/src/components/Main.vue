@@ -107,10 +107,10 @@ export default {
   },
   methods: {
     selectUserItems(item) {
-    if (!this.selectedUserItems.find(i => i.id === item.id)) {
-        console.log(this.selectedUserItems)
-       this.selectedUserItems.push(item); // левая часть, добавляем в массив несколько элементов пользователя 
+      if (this.selectedUserItems.length < 6) {
+          this.selectedUserItems.push(item); // левая часть, добавляем в массив несколько элементов пользователя      
       }
+      return
     },
     selectChooseItem(item) {
       this.selectedItem = item; // право, выбираем одну вещь из нижнего правого блока
@@ -127,10 +127,11 @@ export default {
 .top {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 30px;
 }
 .bottom {
   display: flex;
-
+  gap: 30px;
 }
 .sidebar-left, .sidebar-right {
   flex: 1;

@@ -16,7 +16,8 @@ export default {
 
 <style>
 #app {
+  padding: 20px;
   font-family: Arial, sans-serif;
-  color: #333;
+
 }
 </style>

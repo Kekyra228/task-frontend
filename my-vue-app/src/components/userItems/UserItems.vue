@@ -27,16 +27,21 @@ export default {
 
 <style scoped>
 .user-items {
+  height: 300px;
   display: flex;
   flex-wrap: wrap;
-  border-radius: 1px solid #000;
+  border: 2px solid #000000; 
+    padding: 20px;
+    gap: 10px;
 }
-
 .user-item {
-  padding: 10px;
-  border: 1px solid #ccc;
-  margin: 5px 0;
-  cursor: pointer;
+   text-align: center;
+     width: 50px;
+    height: 50px;
+    border: 2px solid #000000; 
+    cursor: pointer;
+  font-size: 12px;
+
 }
 
 .user-item:hover {

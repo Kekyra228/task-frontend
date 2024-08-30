@@ -1,5 +1,5 @@
 <template>
-  <div class="selected-item">
+  <div class="selected-block">
     <div 
       v-if="item" 
       :key="item.id" 
@@ -20,5 +20,18 @@ export default {
 </script>
 
 <style scoped>
-
+  .selected-block{
+    padding: 20px;
+    width: 250px;
+    height: 250px;
+    border: 2px solid #000000; 
+    font-size: 12px;
+  
+  }
+  .selected-item{
+    text-align: center;
+     width: 40px;
+    height: 40px;
+    border: 2px solid #000000; 
+  }
 </style>
