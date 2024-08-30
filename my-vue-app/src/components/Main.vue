@@ -34,7 +34,7 @@ export default {
   data() {
     return {
       selectedUserItems: [], // лево, выбранные вещи из вещей пользователя снизу слева(отображение сверху слева)
-      SelectedItem: null, //одна выбранная вещь из правого нижнего блока
+      selectedItem: null, //одна выбранная вещь из правого нижнего блока
         userItems: [ 
       {
         "id": 1,

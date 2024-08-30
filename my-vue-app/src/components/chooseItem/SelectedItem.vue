@@ -1,11 +1,22 @@
 <template>
-  <div>
-    <h1>тут выбранная вещь</h1>
+  <div class="selected-item">
+    <div 
+      v-if="item" 
+      :key="item.id" 
+      class="selected-item"
+    >
+      {{ item.name }}
+    </div>
   </div>
 </template>
 
-<script>
 
+<script>
+export default {
+  props: {
+    item: Object
+  }
+}
 </script>
 
 <style scoped>

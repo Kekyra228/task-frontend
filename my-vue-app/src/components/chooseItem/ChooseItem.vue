@@ -18,7 +18,8 @@ export default {
   },
   methods: {
     selectItem(item) {
-      this.$emit('select', item); 
+        console.log("метод вызван")
+      this.$emit('selectItem', item); 
     }
   }
 }
